@@ -8,8 +8,6 @@ const writeFile = promisify(fs.writeFile);
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-console.dir(process.argv);
-
 const executeShell = (command, arguments, options) => {
   return new Promise( (resolve, reject) => {
     const shell = spawn(command, arguments, options);
@@ -23,10 +21,15 @@ const executeShell = (command, arguments, options) => {
 }
 
 const main = async () => {
+  const command = core.getInput('command');
+  const reportName = core.getInput('custom-name');
+  const outputName = core.getInput('custom-file-name');
+  console.log(`${command} ${reportName} ${outputName}`)
+
   // Run script
   let result = '';
   try {
-    const [ cmd, ...args ] = core.getInput('command')
+    const [ cmd, ...args ] = command.split(' ');
     result = await executeShell(cmd, args, { cwd: process.cwd() });
   } catch (err) {
     core.setFailed(err);
@@ -35,7 +38,7 @@ const main = async () => {
   
 
   const output = `
-## ${core.getInput('custom-name')}
+## ${reportName}
 \`\`\`
 ${result.join('\n')}
 \`\`\`
