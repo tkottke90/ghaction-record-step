@@ -5,7 +5,8 @@ const { promisify } = require('util');
 
 const writeFile = promisify(fs.writeFile);
 
-const [,, command, scriptName, outputName ] = process.argv;
+const core = require('@actions/core');
+const github = require('@actions/github');
 
 console.dir(process.argv);
 
@@ -25,17 +26,16 @@ const main = async () => {
   // Run script
   let result = '';
   try {
-    const [ cmd, ...args ] = command.split(' ');  
+    const [ cmd, ...args ] = core.getInput('command')
     result = await executeShell(cmd, args, { cwd: process.cwd() });
   } catch (err) {
-    console.error(err);
-    process.exit(1);
+    core.setFailed(err);
   }
   // Generate output
   
 
   const output = `
-## ${scriptName}
+## ${core.getInput('custom-name')}
 \`\`\`
 ${result.join('\n')}
 \`\`\`
