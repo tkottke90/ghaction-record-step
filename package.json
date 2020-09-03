@@ -1,0 +1,36 @@
+{
+  "name": "ghaction-record-step",
+  "version": "0.1.0",
+  "description": "Github action designed to run a step and output the the result to a PR",
+  "main": "index.js",
+  "scripts": {
+    "lint": "echo \"Oh linting I will\"",
+    "release": "standard-version -r",
+    "release-rc": "standard-version -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkottke90/ghaction-record-step.git"
+  },
+  "keywords": [
+    "Github-Actions",
+    "Javascript",
+    "Docker"
+  ],
+  "author": "Thomas Kottke <t.kottke90@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tkottke90/ghaction-record-step/issues"
+  },
+  "homepage": "https://github.com/tkottke90/ghaction-record-step#readme",
+  "bin": {
+    "record": "index.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.5",
+    "@actions/github": "^4.0.0"
+  },
+  "devDependencies": {
+    "standard-version": "^9.0.0"
+  }
+}
