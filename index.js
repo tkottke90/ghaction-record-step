@@ -26,6 +26,11 @@ const main = async () => {
   const outputName = core.getInput('custom-file-name');
   console.log(`${command} ${reportName} ${outputName}`)
 
+  if (!command) {
+    core.setFailed('Missing command!');
+    return;
+  }
+
   // Run script
   let result = '';
   try {
@@ -33,6 +38,7 @@ const main = async () => {
     result = await executeShell(cmd, args, { cwd: process.cwd() });
   } catch (err) {
     core.setFailed(err);
+    return;
   }
   // Generate output
   
