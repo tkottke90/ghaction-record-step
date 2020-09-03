@@ -1,5 +1,7 @@
 FROM node:12.18
 
+WORKDIR /usr/app
+
 COPY index.js .
 
 COPY package.json .
