@@ -1,6 +1,6 @@
 {
   "name": "ghaction-record-step",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "Github action designed to run a step and output the the result to a PR",
   "main": "index.js",
   "scripts": {
