@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-alpha.5](https://github.com/tkottke90/ghaction-record-step/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2020-09-03)
+
+
+### Bug Fixes
+
+* Action main property ([774f8c1](https://github.com/tkottke90/ghaction-record-step/commit/774f8c1a9530ccb4ca1d1f7d13edcf304ce57b3b))
+* Use node in action.yml ([b36a41e](https://github.com/tkottke90/ghaction-record-step/commit/b36a41eed6dabb45e576aeb89f41175befe8519b))
+
 ## [1.0.0-alpha.4](https://github.com/tkottke90/ghaction-record-step/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2020-09-03)
 
 ## [1.0.0-alpha.3](https://github.com/tkottke90/ghaction-record-step/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2020-09-03)
