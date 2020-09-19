@@ -52,7 +52,7 @@ ${result.join('\n')}
 `;
 
   // Save File
-  await writeFile(path.join(process.cwd(), outputName), output, 'utf8');
+  await writeFile(path.join(cwd, outputName), output, 'utf8');
 
 }
 
