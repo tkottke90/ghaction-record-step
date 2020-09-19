@@ -24,6 +24,7 @@ const main = async () => {
   const command = core.getInput('command');
   const reportName = core.getInput('custom-name');
   const outputName = core.getInput('custom-file-name');
+  const cwd = path.resolve(process.cwd(), core.getInput('working-directory'));
   console.log(`${command} ${reportName} ${outputName}`)
 
   if (!command) {
@@ -35,7 +36,7 @@ const main = async () => {
   let result = '';
   try {
     const [ cmd, ...args ] = command.split(' ');
-    result = await executeShell(cmd, args, { cwd: process.cwd() });
+    result = await executeShell(cmd, args, { cwd });
   } catch (err) {
     core.setFailed(err);
     return;
